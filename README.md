@@ -2,6 +2,9 @@
 
 ## Component list:
 
+![image](sfeer.jpg)
+
+
 BNO055 IMU
 
 TB6612 Motor driver

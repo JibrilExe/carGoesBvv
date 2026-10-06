@@ -1,18 +1,21 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#ifndef LED_BUILTIN
+#define LED_BUILTIN 2
+#endif
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.println("\n--- ESP32 Flashing Test Successful ---");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
+  digitalWrite(LED_BUILTIN, HIGH);
+  Serial.println("ESP32 Alive - LED ON");
+  delay(1000);
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  digitalWrite(LED_BUILTIN, LOW);
+  Serial.println("ESP32 Alive - LED OFF");
+  delay(1000);
 }
